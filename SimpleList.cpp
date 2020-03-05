@@ -5,17 +5,20 @@
 #include <type_traits>
 #include "SimpleList.h"
 
+// Deletes element from list
 template<class T>
 void destroy(T element) {
   
 }
 
+// Deletes element from list
 template <class T>
 void destroy(T* element) {
 	// delete the pointer type
 	delete element;
 }
 
+// Default constructor
 template<class T>
 SimpleList<T>::SimpleList() {
 
@@ -24,6 +27,7 @@ SimpleList<T>::SimpleList() {
 
 }
 
+// Destructor
 template<class T>
 SimpleList<T>::~SimpleList() {
 
@@ -36,6 +40,7 @@ SimpleList<T>::~SimpleList() {
   
 }
 
+// Returns element from array index or throws exception
 template <class T>
 T SimpleList<T>::at(int index) const throw (InvalidIndexException) {
 
@@ -46,6 +51,7 @@ T SimpleList<T>::at(int index) const throw (InvalidIndexException) {
 
 }
 
+// Returns true if list is empty
 template<class T>
 bool SimpleList<T>::empty() const {
 
@@ -56,6 +62,7 @@ bool SimpleList<T>::empty() const {
 
 }
 
+// Returns first element or throws exception
 template <class T>
 T SimpleList<T>::first() const throw (EmptyListException) {
 
@@ -65,6 +72,7 @@ T SimpleList<T>::first() const throw (EmptyListException) {
   
 }
 
+// Returns last element or throws exception
 template <class T>
 T SimpleList<T>::last() const throw (EmptyListException) {
 
@@ -75,6 +83,7 @@ T SimpleList<T>::last() const throw (EmptyListException) {
 
 }
 
+// Returns number of elements
 template<class T>
 int SimpleList<T>::getNumElements() const {
 
@@ -82,6 +91,7 @@ int SimpleList<T>::getNumElements() const {
   
 }
 
+// Adds item to list or throws exception
 template<class T>
 void SimpleList<T>::insert(T item) throw (FullListException) {
 
@@ -93,6 +103,7 @@ void SimpleList<T>::insert(T item) throw (FullListException) {
   }			     
 }
 
+// Removes item from list or throws exception
 template<class T>
 void SimpleList<T>::remove(int index) throw (InvalidIndexException,
 					     EmptyListException) {
